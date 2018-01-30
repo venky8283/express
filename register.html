@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>
+	
+	ChirpApp
+</title>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/javascript.js"></script>
+</head>
+<body ng-app="chirpApp">
+	<div ng-controller="authController"  id="main">
+	<form ng-submit="register()">
+	<p>{{error_message}}</p>
+	<input ng-model="user.username" required type="text" name="your name" placeholder="Username">
+	<input ng-model="user.password" required type="text" name="your name" placeholder="Password">
+	
+		<input type="submit" name="submit-chirp" row=3 value="chirp">
+	</form>
+		
+		</div>
+
+
+</body>
+</html>

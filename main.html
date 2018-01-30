@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>
+	
+	ChirpApp
+</title>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/javascript.js"></script>
+</head>
+<body ng-app="chirpApp">
+	<div ng-controller="mainController"  id="main">
+	<form ng-submit="post()">
+	<input ng-model="newPost.create_by" required type="text" name="your name" placeholder="say something">
+	<textarea ng-model="newPost.text" maxlength="200"></textarea>
+		<input type="submit" name="submit-chirp" row=3 value="chirp">
+	</form>
+	<div id="chirpcontainer">
+	<h4>Chirp Feed</h4>
+		<div ng-repeat="post in posts | orderBy:'create_at':true">
+			<p>{{post.create_by}} says {{post.text}} at {{post.create_at | date:"h:mma 'on' MMM d, y"}}</p>
+
+		</div>
+
+	</div>
+	</div>
+
+
+</body>
+</html>
